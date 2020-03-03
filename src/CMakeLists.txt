@@ -5,7 +5,11 @@ add_executable(vect_editor_prototype
     shapes/base/IShape.h shapes/base/IIdCreator.h
     shapes/Circle.h shapes/Circle.cpp
     shapes/Line.h   shapes/Line.cpp
-    shapes/ShapesCreator.h shapes/ShapesCreator.cpp)
+    shapes/ShapesCreator.h shapes/ShapesCreator.cpp
+
+    documents/base/IDocument.h
+    documents/Document.h documents/Document.cpp
+    )
 
 # включаем 14 стандарт для наших целей
 set_target_properties(vect_editor_prototype PROPERTIES
