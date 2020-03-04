@@ -1,15 +1,15 @@
-#ifndef IFACTORY_H
-#define IFACTORY_H
+#ifndef ISHAPESFACTORY_H
+#define ISHAPESFACTORY_H
 
 #include "../shapes/base/IShape.h"
 
-class IFactory
+class IShapesFactory
 {
 public:
-    virtual ~IFactory() = default;
+    virtual ~IShapesFactory() = default;
 
     virtual std::unique_ptr<IShape> createLine() const = 0;
     virtual std::unique_ptr<IShape> createCircle() const = 0;
 };
 
-#endif // IFACTORY_H
+#endif // ISHAPESFACTORY_H

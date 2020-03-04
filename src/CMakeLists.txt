@@ -9,9 +9,12 @@ add_executable(vect_editor_prototype
     interfaces/ICommand.h
     interfaces/ICommandHandler.h
     interfaces/IConfiguration.h
-    interfaces/IFactory.h
+    interfaces/IShapesFactory.h
     interfaces/IIdCreator.h
+    interfaces/IDocsFactory.h
+    interfaces/IButton.h
 
+    Button.h Button.cpp
     GuiInteractor.h GuiInteractor.cpp
     Factory.h Factory.cpp
     AddShapeCmd.h AddShapeCmd.cpp

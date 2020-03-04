@@ -4,7 +4,7 @@
 #include "interfaces/IFactory.h"
 #include "interfaces/IIdCreator.h"
 
-class Factory : public IFactory
+class Factory : public IShapesFactory
 {
 public:
     Factory(std::shared_ptr<IIdCreator>);

@@ -22,7 +22,7 @@ std::shared_ptr<IDocument> GuiInteractor::importDocument(
     return engine->importDocument(name);
 }
 
-void GuiInteractor::exportDocument(
+void GuiInteractor::exportCurrentDocument(
         std::shared_ptr<IDocument>, std::unique_ptr<IExportEngine>&&)
 {
     std::cout << "GuiInteractor::exportDocument" << std::endl;

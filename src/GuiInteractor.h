@@ -14,7 +14,7 @@ public:
     std::shared_ptr<IDocument> createDocument() override;
     std::shared_ptr<IDocument> importDocument(
             const std::string&, std::unique_ptr<IImportEngine>&&) override;
-    void exportDocument(
+    void exportCurrentDocument(
             std::shared_ptr<IDocument>, std::unique_ptr<IExportEngine>&&) override;
 
     void addShape(std::shared_ptr<IDocument>, std::shared_ptr<IShape>) override;
