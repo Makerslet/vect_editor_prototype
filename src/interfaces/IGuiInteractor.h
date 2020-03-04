@@ -1,7 +1,7 @@
 #ifndef IGUIINTERACTOR_H
 #define IGUIINTERACTOR_H
 
-#include "documents/base/IDocument.h"
+#include "../documents/base/IDocument.h"
 #include "IImportEngine.h"
 #include "IExportEngine.h"
 

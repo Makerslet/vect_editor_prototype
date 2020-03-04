@@ -2,7 +2,7 @@
 #define CIRCLE_H
 
 #include "base/IShape.h"
-#include "base/IIdCreator.h"
+#include "../interfaces/IIdCreator.h"
 
 class Circle : public IShape
 {

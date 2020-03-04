@@ -2,20 +2,31 @@ cmake_minimum_required(VERSION 3.2)
 
 add_executable(vect_editor_prototype
     main.cpp
-    IController.h
-    IGuiInteractor.h
-    IExportEngine.h
-    IImportEngine.h
-    ICommand.h
-    ICommandHandler.h
-    IConfiguration.h
+    interfaces/IController.h
+    interfaces/IGuiInteractor.h
+    interfaces/IExportEngine.h
+    interfaces/IImportEngine.h
+    interfaces/ICommand.h
+    interfaces/ICommandHandler.h
+    interfaces/IConfiguration.h
+    interfaces/IFactory.h
+    interfaces/IIdCreator.h
 
     GuiInteractor.h GuiInteractor.cpp
+    Factory.h Factory.cpp
+    AddShapeCmd.h AddShapeCmd.cpp
+    RemoveShapeCmd.h RemoveShapeCmd.cpp
+    ExportDocumentCmd.h ExportDocumentCmd.cpp
+    Configurator.h Configurator.cpp
+    Controller.h Controller.cpp
+    CommandHandler.h CommandHandler.cpp
+    IdCreator.h IdCreator.cpp
+    ImportEngine.h ImportEngine.cpp
+    ExportEngine.h ExportEngine.cpp
 
-    shapes/base/IShape.h shapes/base/IIdCreator.h
+    shapes/base/IShape.h
     shapes/Circle.h shapes/Circle.cpp
     shapes/Line.h   shapes/Line.cpp
-    shapes/ShapesCreator.h shapes/ShapesCreator.cpp
 
     documents/base/IDocument.h
     documents/Document.h documents/Document.cpp

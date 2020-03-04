@@ -3,8 +3,9 @@
 
 GuiInteractor::GuiInteractor(
         std::shared_ptr<IController> controller,
-        std::shared_ptr<IConfiguration> configuration) :
-    _controller(controller), _configuration(configuration)
+        std::unique_ptr<IFactory> factory) :
+    _controller(controller),
+    _factory(std::move(factory))
 {}
 
 
@@ -16,8 +17,7 @@ std::shared_ptr<IDocument> GuiInteractor::createDocument()
 std::shared_ptr<IDocument> GuiInteractor::importDocument(
         const std::string& name, std::unique_ptr<IImportEngine>&& engine)
 {
-    return engine->importDocument(
-                _configuration->importPath() + name);
+    return engine->importDocument(name);
 }
 
 void GuiInteractor::exportDocument(
@@ -28,10 +28,12 @@ void GuiInteractor::exportDocument(
 
 void GuiInteractor::addCircle(std::shared_ptr<IDocument>)
 {
-    // addCommand addCircle
+    std::unique_ptr<IShape> circle = _factory->createCircle();
+    // addCommand addShape
 }
 
 void GuiInteractor::addLine(std::shared_ptr<IDocument>)
 {
-    // addCommand addLine
+    std::unique_ptr<IShape> line = _factory->createLine();
+    // addCommand addShape
 }

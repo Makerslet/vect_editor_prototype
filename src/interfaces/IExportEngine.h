@@ -1,7 +1,7 @@
 #ifndef IEXPORTENGINE_H
 #define IEXPORTENGINE_H
 
-#include "documents/base/IDocument.h"
+#include "../documents/base/IDocument.h"
 
 #include <string>
 #include <memory>

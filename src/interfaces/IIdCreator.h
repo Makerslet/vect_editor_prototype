@@ -3,10 +3,12 @@
 
 #include <cstddef>
 
+using ShapeId = std::size_t;
+
 struct IIdCreator
 {
     virtual ~IIdCreator() = default;
-    virtual std::size_t generateId() = 0;
+    virtual ShapeId generateId() = 0;
 };
 
 #endif // IIDCREATOR_H
