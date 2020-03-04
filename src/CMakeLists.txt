@@ -2,6 +2,16 @@ cmake_minimum_required(VERSION 3.2)
 
 add_executable(vect_editor_prototype
     main.cpp
+    IController.h
+    IGuiInteractor.h
+    IExportEngine.h
+    IImportEngine.h
+    ICommand.h
+    ICommandHandler.h
+    IConfiguration.h
+
+    GuiInteractor.h GuiInteractor.cpp
+
     shapes/base/IShape.h shapes/base/IIdCreator.h
     shapes/Circle.h shapes/Circle.cpp
     shapes/Line.h   shapes/Line.cpp
