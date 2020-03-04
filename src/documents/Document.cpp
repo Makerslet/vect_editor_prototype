@@ -11,13 +11,13 @@ void Document::show() const
         shape.second->show();
 }
 
-void Document::addShape(std::unique_ptr<IShape>&& shape)
+void Document::addShape(std::shared_ptr<IShape> shape)
 {
     std::size_t id = shape->id();
-    _shapes.try_emplace(id, std::move(shape));
+    _shapes.try_emplace(id, shape);
 }
 
-void Document::removeShape(std::size_t id)
+void Document::removeShape(ShapeId id)
 {
     const auto& iter = _shapes.find(id);
     if(iter != _shapes.end())

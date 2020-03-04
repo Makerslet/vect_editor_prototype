@@ -9,8 +9,7 @@
 class GuiInteractor : public IGuiInteractor
 {
 public:
-    GuiInteractor(std::shared_ptr<IController>,
-                  std::unique_ptr<IFactory>);
+    GuiInteractor(std::shared_ptr<IController>);
 
     std::shared_ptr<IDocument> createDocument() override;
     std::shared_ptr<IDocument> importDocument(
@@ -18,12 +17,11 @@ public:
     void exportDocument(
             std::shared_ptr<IDocument>, std::unique_ptr<IExportEngine>&&) override;
 
-    void addCircle(std::shared_ptr<IDocument>) override;
-    void addLine(std::shared_ptr<IDocument>) override;
+    void addShape(std::shared_ptr<IDocument>, std::shared_ptr<IShape>) override;
+    void removeShape(std::shared_ptr<IDocument>, ShapeId) override;
 
 private:
     std::shared_ptr<IController> _controller;
-    std::unique_ptr<IFactory> _factory;
 };
 
 #endif // GUIINTERACTOR_H

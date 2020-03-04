@@ -10,11 +10,11 @@ public:
     Document();
     void show() const override;
 
-    void addShape(std::unique_ptr<IShape>&&) override;
-    void removeShape(std::size_t) override;
+    void addShape(std::shared_ptr<IShape>) override;
+    void removeShape(ShapeId) override;
 
 private:
-    std::unordered_map<std::size_t, std::unique_ptr<IShape>> _shapes;
+    std::unordered_map<ShapeId, std::shared_ptr<IShape>> _shapes;
 };
 
 #endif // DOCUMENT_H
