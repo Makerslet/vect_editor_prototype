@@ -7,12 +7,9 @@
 class ImportEngine : public IImportEngine
 {
 public:
-    ImportEngine(std::shared_ptr<IConfiguration>);
+    ImportEngine();
 
     std::shared_ptr<IDocument> importDocument(const std::string&) override;
-
-private:
-    std::shared_ptr<IConfiguration> _configuration;
 };
 
 #endif // IMPORTENGINE_H

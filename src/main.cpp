@@ -1,31 +1,46 @@
-#include "GuiInteractor.h"
 #include "Configurator.h"
 #include "Controller.h"
 #include "CommandHandler.h"
 #include "IdCreator.h"
-#include "Factory.h"
+#include "ShapesFactory.h"
 #include "ImportEngine.h"
 #include "ExportEngine.h"
+#include "FSManager.h"
+#include "GuiContext.h"
+#include "Button.h"
+#include "ButtonsCallbackFactory.h"
 
 int main (int, char **)
 {
-    std::shared_ptr<ICommandHandler> commandHandler = std::make_shared<CommandHandler>();
-    std::shared_ptr<IController> controller = std::make_shared<Controller>(commandHandler);
-    std::shared_ptr<IIdCreator> idCreator = std::make_shared<IdCreator>();
-
-    // создаем класс доступный из Gui
-    std::unique_ptr<IGuiInteractor> guiInteractor =
-            std::make_unique<GuiInteractor>(controller);
-
-    // имитируем вызов создания документа
-    auto createdDocument = guiInteractor->createDocument();
-
-    // имитируем вызов импорта документа
+    // App kernel
     std::shared_ptr<IConfiguration> config = std::make_shared<Configurator>();
-    auto importedDocument = guiInteractor->importDocument(std::string("name"), std::make_unique<ImportEngine>(config));
+    std::shared_ptr<IImportEngine> importEngine = std::make_shared<ImportEngine>();
+    std::shared_ptr<IExportEngine> exportEngine = std::make_shared<ExportEngine>();
+    std::shared_ptr<IFSManager> fsManager = std::make_shared<FSManager>();
 
-    // имитируем вызов экспорта документа
-    guiInteractor->exportDocument(createdDocument, std::make_unique<ExportEngine>());
+    std::shared_ptr<ICommandHandler> commandHandler = std::make_shared<CommandHandler>();
+    std::shared_ptr<IController> controller = std::make_shared<Controller>(
+                commandHandler, importEngine, exportEngine, fsManager);
+
+    // GuiComponents
+    std::shared_ptr<IGuiContext> guiContext = std::make_shared<GuiContext>();
+
+    std::shared_ptr<IIdCreator> idCreator = std::make_shared<IdCreator>();
+    std::shared_ptr<IShapesFactory> shapesFactory = std::make_shared<ShapesFactory>(idCreator);
+
+    // controlButtons
+    std::unique_ptr<IButton> createDocButton = std::make_unique<Button>(
+                ButtonsCallbackFactory::createDocument(controller, guiContext));
+    std::unique_ptr<IButton> exportDocButton = std::make_unique<Button>(
+                ButtonsCallbackFactory::exportFile(controller, guiContext));
+    std::unique_ptr<IButton> importDocButton = std::make_unique<Button>(
+                ButtonsCallbackFactory::importFile(controller, guiContext));
+    std::unique_ptr<IButton> createLineButton = std::make_unique<Button>(
+                ButtonsCallbackFactory::createLine(controller, guiContext, shapesFactory));
+    std::unique_ptr<IButton> createCircleButton = std::make_unique<Button>(
+                ButtonsCallbackFactory::createLine(controller, guiContext, shapesFactory));
+    std::unique_ptr<IButton> removeChoosenShapeButton = std::make_unique<Button>(
+                ButtonsCallbackFactory::removeShape(controller, guiContext));
 
     return 0;
 }

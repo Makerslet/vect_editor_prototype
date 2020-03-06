@@ -3,7 +3,6 @@ cmake_minimum_required(VERSION 3.2)
 add_executable(vect_editor_prototype
     main.cpp
     interfaces/IController.h
-    interfaces/IGuiInteractor.h
     interfaces/IExportEngine.h
     interfaces/IImportEngine.h
     interfaces/ICommand.h
@@ -13,10 +12,14 @@ add_executable(vect_editor_prototype
     interfaces/IIdCreator.h
     interfaces/IDocsFactory.h
     interfaces/IButton.h
+    interfaces/IGuiContext.h
+    interfaces/IFSManager.h
 
+    GuiContext.h GuiContext.cpp
+    FSManager.h FSManager.cpp
+    ButtonsCallbackFactory.h ButtonsCallbackFactory.cpp
     Button.h Button.cpp
-    GuiInteractor.h GuiInteractor.cpp
-    Factory.h Factory.cpp
+    ShapesFactory.h ShapesFactory.cpp
     AddShapeCmd.h AddShapeCmd.cpp
     RemoveShapeCmd.h RemoveShapeCmd.cpp
     ExportDocumentCmd.h ExportDocumentCmd.cpp
