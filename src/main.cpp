@@ -1,14 +1,17 @@
-#include "Configurator.h"
-#include "Controller.h"
-#include "CommandHandler.h"
-#include "IdCreator.h"
-#include "ShapesFactory.h"
-#include "ImportEngine.h"
-#include "ExportEngine.h"
-#include "FSManager.h"
-#include "GuiContext.h"
-#include "Button.h"
-#include "ButtonsCallbackFactory.h"
+#include "controller/Configurator.h"
+#include "controller/Controller.h"
+#include "controller/CommandHandler.h"
+#include "controller/FSManager.h"
+
+#include "document/ImportEngine.h"
+#include "document/ExportEngine.h"
+
+#include "shapes/IdCreator.h"
+#include "shapes/ShapesFactory.h"
+
+#include "ui/GuiContext.h"
+#include "ui/Button.h"
+#include "ui/ButtonsCallbackFactory.h"
 
 int main (int, char **)
 {

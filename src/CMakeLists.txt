@@ -1,68 +1,69 @@
 cmake_minimum_required(VERSION 3.2)
 
-add_executable(vect_editor_prototype
+set(TARGET_NAME vect_editor_prototype)
+
+set(COMMANDS_SOURCES_PATH   ${CMAKE_CURRENT_SOURCE_DIR}/commands)
+set(CONTROLLER_SOURCES_PATH ${CMAKE_CURRENT_SOURCE_DIR}/controller)
+set(DOCUMENT_SOURCES_PATH   ${CMAKE_CURRENT_SOURCE_DIR}/document)
+set(SHAPES_SOURCES_PATH     ${CMAKE_CURRENT_SOURCE_DIR}/shapes)
+set(UI_SOURCES_PATH         ${CMAKE_CURRENT_SOURCE_DIR}/ui)
+
+file(GLOB_RECURSE COMMANDS_HEADERS  ${COMMANDS_SOURCES_PATH}/*.h)
+file(GLOB_RECURSE COMMANDS_SRC      ${COMMANDS_SOURCES_PATH}/*.cpp)
+
+file(GLOB_RECURSE CONTROLLER_HEADERS    ${CONTROLLER_SOURCES_PATH}/*.h)
+file(GLOB_RECURSE CONTROLLER_SRC        ${CONTROLLER_SOURCES_PATH}/*.cpp)
+
+file(GLOB_RECURSE DOCUMENT_HEADERS  ${DOCUMENT_SOURCES_PATH}/*.h)
+file(GLOB_RECURSE DOCUMENT_SRC      ${DOCUMENT_SOURCES_PATH}/*.cpp)
+
+file(GLOB_RECURSE SHAPES_HEADERS    ${SHAPES_SOURCES_PATH}/*.h)
+file(GLOB_RECURSE SHAPES_SRC        ${SHAPES_SOURCES_PATH}/*.cpp)
+
+file(GLOB_RECURSE UI_HEADERS    ${UI_SOURCES_PATH}/*.h)
+file(GLOB_RECURSE UI_SRC        ${UI_SOURCES_PATH}/*.cpp)
+
+add_executable(${TARGET_NAME}
     main.cpp
-    interfaces/IController.h
-    interfaces/IExportEngine.h
-    interfaces/IImportEngine.h
-    interfaces/ICommand.h
-    interfaces/ICommandHandler.h
-    interfaces/IConfiguration.h
-    interfaces/IShapesFactory.h
-    interfaces/IIdCreator.h
-    interfaces/IDocsFactory.h
-    interfaces/IButton.h
-    interfaces/IGuiContext.h
-    interfaces/IFSManager.h
+    ${COMMANDS_HEADERS}     ${COMMANDS_SRC}
+    ${CONTROLLER_HEADERS}   ${CONTROLLER_SRC}
+    ${DOCUMENT_HEADERS}     ${DOCUMENT_SRC}
+    ${SHAPES_HEADERS}       ${SHAPES_SRC}
+    ${UI_HEADERS}           ${UI_SRC})
 
-    GuiContext.h GuiContext.cpp
-    FSManager.h FSManager.cpp
-    ButtonsCallbackFactory.h ButtonsCallbackFactory.cpp
-    Button.h Button.cpp
-    ShapesFactory.h ShapesFactory.cpp
-    AddShapeCmd.h AddShapeCmd.cpp
-    RemoveShapeCmd.h RemoveShapeCmd.cpp
-    ExportDocumentCmd.h ExportDocumentCmd.cpp
-    Configurator.h Configurator.cpp
-    Controller.h Controller.cpp
-    CommandHandler.h CommandHandler.cpp
-    IdCreator.h IdCreator.cpp
-    ImportEngine.h ImportEngine.cpp
-    ExportEngine.h ExportEngine.cpp
+target_include_directories(${TARGET_NAME} PUBLIC
+    ${COMMANDS_SOURCES_PATH}
+    ${CONTROLLER_SOURCES_PATH}
+    ${DOCUMENT_SOURCES_PATH}
+    ${SHAPES_SOURCES_PATH}
+    ${UI_SOURCES_PATH})
 
-    shapes/base/IShape.h
-    shapes/Circle.h shapes/Circle.cpp
-    shapes/Line.h   shapes/Line.cpp
-
-    documents/base/IDocument.h
-    documents/Document.h documents/Document.cpp
-    )
 
 # включаем 14 стандарт для наших целей
-set_target_properties(vect_editor_prototype PROPERTIES
+set_target_properties(${TARGET_NAME} PROPERTIES
     CXX_STANDARD 17
     CXX_STANDARD_REQUIRED ON
 )
 
 # максимально строгие настройки компилятора
 if (MSVC)
-    target_compile_options(vect_editor_prototype PRIVATE
+    target_compile_options(${TARGET_NAME} PRIVATE
         /W4
     )
-    target_compile_options(vect_editor_prototype PRIVATE
+    target_compile_options(${TARGET_NAME} PRIVATE
         /W4
     )
 else ()
-    target_compile_options(vect_editor_prototype PRIVATE
+    target_compile_options(${TARGET_NAME} PRIVATE
         -Wall -Wextra -pedantic -Werror
     )
-    target_compile_options(vect_editor_prototype PRIVATE
+    target_compile_options(${TARGET_NAME} PRIVATE
         -Wall -Wextra -pedantic -Werror
     )
 endif()
 
 # бинарник кладем в каталог bin
-install(TARGETS vect_editor_prototype RUNTIME DESTINATION bin)
+install(TARGETS ${TARGET} RUNTIME DESTINATION bin)
 
 # генерить будем deb пакет
 set(CPACK_GENERATOR DEB)

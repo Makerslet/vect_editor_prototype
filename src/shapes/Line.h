@@ -1,8 +1,8 @@
 #ifndef LINE_H
 #define LINE_H
 
-#include "base/IShape.h"
-#include "../interfaces/IIdCreator.h"
+#include "interface/IShape.h"
+#include "interface/IIdCreator.h"
 
 class Line : public IShape
 {

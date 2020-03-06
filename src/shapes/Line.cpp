@@ -1,4 +1,5 @@
 #include "Line.h"
+
 #include <iostream>
 
 Line::Line(std::shared_ptr<IIdCreator> idCreator) :

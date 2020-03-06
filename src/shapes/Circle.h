@@ -1,8 +1,8 @@
 #ifndef CIRCLE_H
 #define CIRCLE_H
 
-#include "base/IShape.h"
-#include "../interfaces/IIdCreator.h"
+#include "interface/IShape.h"
+#include "interface/IIdCreator.h"
 
 class Circle : public IShape
 {

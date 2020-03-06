@@ -1,4 +1,5 @@
 #include "Circle.h"
+
 #include <iostream>
 
 Circle::Circle(std::shared_ptr<IIdCreator> idCreator) :
