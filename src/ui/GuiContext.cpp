@@ -3,6 +3,10 @@
 GuiContext::GuiContext()
 {}
 
+void GuiContext::setCurrentDocument(std::shared_ptr<IDocument>)
+{
+}
+
 std::shared_ptr<IDocument> GuiContext::currentDocument()
 {
     return nullptr;

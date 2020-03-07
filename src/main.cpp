@@ -5,6 +5,7 @@
 
 #include "document/ImportEngine.h"
 #include "document/ExportEngine.h"
+#include "document/DocsFactory.h"
 
 #include "shapes/IdCreator.h"
 #include "shapes/ShapesFactory.h"
@@ -16,10 +17,11 @@
 int main (int, char **)
 {
     // App kernel
-    std::shared_ptr<IConfiguration> config = std::make_shared<Configurator>();
-    std::shared_ptr<IImportEngine> importEngine = std::make_shared<ImportEngine>();
+    std::shared_ptr<IDocsFactory> docsFactory = std::make_shared<DocsFactory>();
+    std::shared_ptr<IImportEngine> importEngine = std::make_shared<ImportEngine>(docsFactory);
     std::shared_ptr<IExportEngine> exportEngine = std::make_shared<ExportEngine>();
-    std::shared_ptr<IFSManager> fsManager = std::make_shared<FSManager>();
+    std::shared_ptr<IConfiguration> config = std::make_shared<Configurator>();
+    std::shared_ptr<IFSManager> fsManager = std::make_shared<FSManager>(config);
 
     std::shared_ptr<ICommandHandler> commandHandler = std::make_shared<CommandHandler>();
     std::shared_ptr<IController> controller = std::make_shared<Controller>(
@@ -33,11 +35,11 @@ int main (int, char **)
 
     // controlButtons
     std::unique_ptr<IButton> createDocButton = std::make_unique<Button>(
-                ButtonsCallbackFactory::createDocument(controller, guiContext));
+                ButtonsCallbackFactory::createDocument(controller, guiContext, docsFactory));
     std::unique_ptr<IButton> exportDocButton = std::make_unique<Button>(
-                ButtonsCallbackFactory::exportFile(controller, guiContext));
+                ButtonsCallbackFactory::exportToFile(controller, guiContext));
     std::unique_ptr<IButton> importDocButton = std::make_unique<Button>(
-                ButtonsCallbackFactory::importFile(controller, guiContext));
+                ButtonsCallbackFactory::importFromFile(controller, guiContext));
     std::unique_ptr<IButton> createLineButton = std::make_unique<Button>(
                 ButtonsCallbackFactory::createLine(controller, guiContext, shapesFactory));
     std::unique_ptr<IButton> createCircleButton = std::make_unique<Button>(

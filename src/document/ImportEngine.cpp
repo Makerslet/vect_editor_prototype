@@ -3,12 +3,14 @@
 
 #include <iostream>
 
-ImportEngine::ImportEngine()
+ImportEngine::ImportEngine(
+        std::shared_ptr<IDocsFactory> docsFactory) :
+    _docsFactory(docsFactory)
 {}
 
-std::shared_ptr<IDocument> ImportEngine::importDocument(const std::string&)
+std::shared_ptr<IDocument> ImportEngine::importDocument(const std::string& data)
 {
     std::cout << "ImportEngine::importDocument" << std::endl;
 
-    return std::make_shared<Document>();
+    return _docsFactory->createFilledDocument(data);
 }

@@ -5,14 +5,8 @@
 Configurator::Configurator()
 {}
 
-std::string Configurator::importPath() const
+std::string Configurator::defaultPath() const
 {
-    std::cout<< "Configurator::importPath()" << std::endl;
-    return std::string();
-}
-
-std::string Configurator::exportPath() const
-{
-    std::cout << "Configurator::exportPath()" << std::endl;
+    std::cout<< "Configurator::defaultPath()" << std::endl;
     return std::string();
 }

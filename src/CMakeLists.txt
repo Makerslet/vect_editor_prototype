@@ -39,7 +39,6 @@ target_include_directories(${TARGET_NAME} PUBLIC
     ${UI_SOURCES_PATH})
 
 
-# включаем 14 стандарт для наших целей
 set_target_properties(${TARGET_NAME} PROPERTIES
     CXX_STANDARD 17
     CXX_STANDARD_REQUIRED ON

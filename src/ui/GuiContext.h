@@ -10,6 +10,7 @@ class GuiContext : public IGuiContext
 public:
     GuiContext();
 
+    void setCurrentDocument(std::shared_ptr<IDocument>) override;
     std::shared_ptr<IDocument> currentDocument() override;
 
     bool isShapeChoosen() override;

@@ -11,6 +11,7 @@ class IGuiContext
 public:
     virtual ~IGuiContext() = default;
 
+    virtual void setCurrentDocument(std::shared_ptr<IDocument>) = 0;
     virtual std::shared_ptr<IDocument> currentDocument() = 0;
 
     virtual bool isShapeChoosen() = 0;

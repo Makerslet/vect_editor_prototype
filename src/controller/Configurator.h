@@ -8,8 +8,7 @@ class Configurator : public IConfiguration
 public:
     Configurator();
 
-    std::string importPath() const override;
-    std::string exportPath() const override;
+    std::string defaultPath() const override;
 };
 
 #endif // CONFIGURATOR_H
