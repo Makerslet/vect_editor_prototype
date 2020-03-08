@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$structIShape.html" title="Интерфейс фигуры " alt="" coords="5,31,72,57"/>
+<area shape="rect" id="node2" href="$classCircle.html" title="Реализация фигуры &#45; окружность " alt="" coords="120,5,179,32"/>
+<area shape="rect" id="node3" href="$classLine.html" title="Реализация фигуры линии " alt="" coords="125,56,174,83"/>
+</map>

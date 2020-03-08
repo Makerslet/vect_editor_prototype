@@ -1,0 +1,6 @@
+<map id="ICommand" name="ICommand">
+<area shape="rect" id="node2" href="$classAddShapeCmd.html" title="Команда добавления фигуры. Команда позволяет добавить фигуру к документу " alt="" coords="5,80,123,107"/>
+<area shape="rect" id="node3" href="$classExportDocumentCmd.html" title="Команда экспорта документа. Команда позволяет экспортировать документ в файл " alt="" coords="146,80,307,107"/>
+<area shape="rect" id="node4" href="$classImportDocumentCmd.html" title="Команда импорта документа. Команда позволяет импортировать документ из файла " alt="" coords="332,80,495,107"/>
+<area shape="rect" id="node5" href="$classRemoveShapeCmd.html" title="Команда удаления фигуры из документа. Команда позволяет удалить фигуру из документа ..." alt="" coords="519,80,665,107"/>
+</map>

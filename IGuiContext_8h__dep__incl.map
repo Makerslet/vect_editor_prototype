@@ -1,0 +1,9 @@
+<map id="src/ui/interface/IGuiContext.h" name="src/ui/interface/IGuiContext.h">
+<area shape="rect" id="node2" href="$ImportDocumentCmd_8h.html" title="src/commands/ImportDocument\lCmd.h" alt="" coords="84,80,315,121"/>
+<area shape="rect" id="node5" href="$GuiContext_8h.html" title="src/ui/GuiContext.h" alt="" coords="587,87,734,114"/>
+<area shape="rect" id="node8" href="$ButtonsCallbackFactory_8h.html" title="src/ui/ButtonsCallbackFactory.h" alt="" coords="339,87,563,114"/>
+<area shape="rect" id="node3" href="$ImportDocumentCmd_8cpp.html" title="src/commands/ImportDocument\lCmd.cpp" alt="" coords="5,169,236,211"/>
+<area shape="rect" id="node4" href="$ButtonsCallbackFactory_8cpp.html" title="src/ui/ButtonsCallbackFactory.cpp" alt="" coords="260,177,499,203"/>
+<area shape="rect" id="node6" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="523,177,628,203"/>
+<area shape="rect" id="node7" href="$GuiContext_8cpp.html" title="src/ui/GuiContext.cpp" alt="" coords="652,177,813,203"/>
+</map>

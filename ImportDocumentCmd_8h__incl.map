@@ -1,0 +1,12 @@
+<map id="src/commands/ImportDocumentCmd.h" name="src/commands/ImportDocumentCmd.h">
+<area shape="rect" id="node2" href="$ICommand_8h.html" title="interface/ICommand.h" alt="" coords="1055,244,1222,271"/>
+<area shape="rect" id="node3" href="$IController_8h.html" title="interface/IController.h" alt="" coords="605,95,768,121"/>
+<area shape="rect" id="node14" href="$IGuiContext_8h.html" title="interface/IGuiContext.h" alt="" coords="5,169,179,196"/>
+<area shape="rect" id="node4" href="$ICommandHandler_8h.html" title="interface/ICommandHandler.h" alt="" coords="921,169,1138,196"/>
+<area shape="rect" id="node6" href="$IFSManager_8h.html" title="interface/IFSManager.h" alt="" coords="203,169,373,196"/>
+<area shape="rect" id="node8" href="$IDocument_8h.html" title="interface/IDocument.h" alt="" coords="458,244,625,271"/>
+<area shape="rect" id="node12" href="$IImportEngine_8h.html" title="interface/IImportEngine.h" alt="" coords="397,169,584,196"/>
+<area shape="rect" id="node13" href="$IExportEngine_8h.html" title="interface/IExportEngine.h" alt="" coords="659,169,845,196"/>
+<area shape="rect" id="node9" href="$IShape_8h.html" title="interface/IShape.h" alt="" coords="551,319,691,345"/>
+<area shape="rect" id="node11" href="$IIdCreator_8h.html" title="interface/IIdCreator.h" alt="" coords="317,319,475,345"/>
+</map>

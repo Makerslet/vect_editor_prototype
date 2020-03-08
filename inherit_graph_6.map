@@ -1,0 +1,4 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classIDocsFactory.html" title="Интерфейс фабрики документов. Позволяет создать пустой документ или документ на основе данных (PS воз..." alt="" coords="5,5,111,32"/>
+<area shape="rect" id="node2" href="$classDocsFactory.html" title="Реализация фабрики документов " alt="" coords="159,5,260,32"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="src/document/interface/IDocsFactory.h" name="src/document/interface/IDocsFactory.h">
+<area shape="rect" id="node2" href="$DocsFactory_8h.html" title="src/document/DocsFactory.h" alt="" coords="85,95,288,121"/>
+<area shape="rect" id="node5" href="$ImportEngine_8h.html" title="src/document/ImportEngine.h" alt="" coords="312,95,525,121"/>
+<area shape="rect" id="node7" href="$ButtonsCallbackFactory_8h.html" title="src/ui/ButtonsCallbackFactory.h" alt="" coords="549,95,773,121"/>
+<area shape="rect" id="node3" href="$DocsFactory_8cpp.html" title="src/document/DocsFactory.cpp" alt="" coords="5,169,224,196"/>
+<area shape="rect" id="node4" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="249,169,354,196"/>
+<area shape="rect" id="node6" href="$ImportEngine_8cpp.html" title="src/document/ImportEngine.cpp" alt="" coords="378,169,606,196"/>
+<area shape="rect" id="node8" href="$ButtonsCallbackFactory_8cpp.html" title="src/ui/ButtonsCallbackFactory.cpp" alt="" coords="630,169,869,196"/>
+</map>

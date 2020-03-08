@@ -1,0 +1,4 @@
+<map id="IShape" name="IShape">
+<area shape="rect" id="node2" href="$classCircle.html" title="Реализация фигуры &#45; окружность " alt="" coords="5,80,64,107"/>
+<area shape="rect" id="node3" href="$classLine.html" title="Реализация фигуры линии " alt="" coords="89,80,138,107"/>
+</map>

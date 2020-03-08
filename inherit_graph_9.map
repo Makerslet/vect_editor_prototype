@@ -1,0 +1,4 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classIFSManager.html" title="Воркера файловой системы. Позволяет читать и писать данные из/ф файловой системы " alt="" coords="5,5,103,32"/>
+<area shape="rect" id="node2" href="$classFSManager.html" title="Реализация воркера файловой системы. " alt="" coords="151,5,244,32"/>
+</map>
