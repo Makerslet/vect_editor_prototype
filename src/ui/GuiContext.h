@@ -5,6 +5,11 @@
 
 #include "interface/IDocument.h"
 
+/**
+ * @brief Реализация графической составляющей приложения
+ */
+
+
 class GuiContext : public IGuiContext
 {
 public:

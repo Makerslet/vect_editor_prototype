@@ -5,10 +5,19 @@
 
 #include "interface/IDocsFactory.h"
 
+/**
+ * @brief Реализация движка импорта документов
+ */
+
 class ImportEngine : public IImportEngine
 {
 public:
-    ImportEngine(std::shared_ptr<IDocsFactory>);
+    /**
+     * @brief Конструктор движка
+     *
+     * @param docsFactory - фабрика для правильного создания документов
+     */
+    ImportEngine(std::shared_ptr<IDocsFactory> docsFactory);
 
     std::shared_ptr<IDocument> importDocument(const std::string&) override;
 

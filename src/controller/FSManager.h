@@ -6,13 +6,23 @@
 
 #include <memory>
 
+/**
+ * @brief Реализация воркера файловой системы.
+ */
+
 class FSManager : public IFSManager
 {
 public:
-    FSManager(std::shared_ptr<IConfiguration>);
+    /**
+     * @brief Конструктор воркера ФС
+     *
+     * @param configuration - конфигурация приложения
+     */
+    FSManager(std::shared_ptr<IConfiguration> configuration);
 
-    std::string readFile(const std::string&name);
+    std::string readFile(const std::string& name);
     void writeFile(const std::string&name, const std::string&data);
+
 private:
     std::shared_ptr<IConfiguration> _configuration;
 };

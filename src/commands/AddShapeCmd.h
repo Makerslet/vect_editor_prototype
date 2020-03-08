@@ -8,10 +8,21 @@
 
 #include <memory>
 
+/**
+ * @brief Команда добавления фигуры.
+ * Команда позволяет добавить фигуру к документу
+ */
+
 class AddShapeCmd : public ICommand
 {
 public:
-    AddShapeCmd(std::shared_ptr<IShape>, std::shared_ptr<IDocument>);
+    /**
+     * @brief Конструктор команды
+     *
+     * @param shape - добавляемая фигура
+     * @param document - документ к которому добавлется фигура
+     */
+    AddShapeCmd(std::shared_ptr<IShape> shape, std::shared_ptr<IDocument> document);
 
     void execute() override;
 

@@ -8,11 +8,21 @@
 
 #include <memory>
 
+/**
+ * @brief Команда удаления фигуры из документа.
+ * Команда позволяет удалить фигуру из документа
+ */
+
 class RemoveShapeCmd : public ICommand
 {
 public:
-    RemoveShapeCmd(std::shared_ptr<IDocument>, ShapeId);
-    ~RemoveShapeCmd() override;
+    /**
+     * @brief Конструктор команды
+     *
+     * @param document - документ из которого удаляется фигура
+     * @param id - идентификатор удаляемой фигуры
+     */
+    RemoveShapeCmd(std::shared_ptr<IDocument> document, ShapeId id);
     void execute() override;
 
 private:

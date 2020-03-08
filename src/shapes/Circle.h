@@ -4,6 +4,10 @@
 #include "interface/IShape.h"
 #include "interface/IIdCreator.h"
 
+/**
+ * @brief Реализация фигуры - окружность
+ */
+
 class Circle : public IShape
 {
 public:

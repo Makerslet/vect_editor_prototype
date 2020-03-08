@@ -3,6 +3,10 @@
 
 #include "interface/IExportEngine.h"
 
+/**
+ * @brief Реализация движка экспорта документов
+ */
+
 class ExportEngine : public IExportEngine
 {
 public:

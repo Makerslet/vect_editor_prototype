@@ -6,13 +6,26 @@
 
 #include "interface/ICommandHandler.h"
 
+/**
+ * @brief Реализация контроллера
+ */
+
+
 class Controller : public IController
 {
 public:
-    Controller(std::shared_ptr<ICommandHandler>,
-               std::shared_ptr<IImportEngine>,
-               std::shared_ptr<IExportEngine>,
-               std::shared_ptr<IFSManager>);
+    /**
+     * @brief Конструктор контроллера
+     *
+     * @param cmdHandler - исполнитель комманда
+     * @param importEngine - движок импорта
+     * @param exportEngine - документ экспорта
+     * @param fsManager - воркер файловой системы
+     */
+    Controller(std::shared_ptr<ICommandHandler> cmdHandler,
+               std::shared_ptr<IImportEngine> importEngine,
+               std::shared_ptr<IExportEngine> exportEngine,
+               std::shared_ptr<IFSManager> fsManager);
 
     std::shared_ptr<ICommandHandler> commandHandler() override;
     std::shared_ptr<IImportEngine> importEngine() override;

@@ -4,6 +4,10 @@
 #include "interface/IShape.h"
 #include "interface/IIdCreator.h"
 
+/**
+ * @brief Реализация фигуры линии
+ */
+
 class Line : public IShape
 {
 public:

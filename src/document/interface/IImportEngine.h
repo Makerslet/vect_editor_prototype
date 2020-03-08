@@ -3,11 +3,22 @@
 
 #include "interface/IDocument.h"
 
+/**
+ * @brief Интерфейс движка импорта документов
+ * Позволяет прочитать документ из текстового формата и создать в стандартном
+ */
+
 class IImportEngine
 {
 public:
     virtual ~IImportEngine() = default;
-    virtual std::shared_ptr<IDocument> importDocument(const std::string&) = 0;
+
+    /**
+     * @brief Метод преобразования документа
+     * @param name имя файла
+     * @return указатель на документ
+     */
+    virtual std::shared_ptr<IDocument> importDocument(const std::string& name) = 0;
 };
 
 

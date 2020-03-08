@@ -3,6 +3,10 @@
 
 #include "interface/IDocsFactory.h"
 
+/**
+ * @brief Реализация фабрики документов
+ */
+
 class DocsFactory : public IDocsFactory
 {
 public:

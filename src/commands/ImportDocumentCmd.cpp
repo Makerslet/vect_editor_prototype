@@ -3,10 +3,10 @@
 ImportDocumentCmd::ImportDocumentCmd(
         std::shared_ptr<IController> controller,
         std::shared_ptr<IGuiContext> guiContext,
-        const std::string& fileName) :
+        const std::string& name) :
     _controller(controller),
     _guiContext(guiContext),
-    _name(fileName)
+    _name(name)
 {
 }
 

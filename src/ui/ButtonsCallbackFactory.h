@@ -10,29 +10,72 @@
 #include <memory>
 #include <functional>
 
+/**
+ * @brief Генератор обработчиков для клавиш
+ */
+
 class ButtonsCallbackFactory
 {
 public:
-    static std::function<void()> createDocument(std::shared_ptr<IController>,
-                                            std::shared_ptr<IGuiContext>,
-                                            std::shared_ptr<IDocsFactory>);
+    /**
+     * @brief Генератор функтора для клавиши создания документа
+     *
+     * @param controller - контроллер приложения
+     * @param guiContext - графический контекст
+     * @param docsFactory - фабрика документов
+     */
+    static std::function<void()> createDocument(std::shared_ptr<IController> controller,
+                                            std::shared_ptr<IGuiContext> guiContext,
+                                            std::shared_ptr<IDocsFactory> docsFactory);
 
-    static std::function<void()> exportToFile(std::shared_ptr<IController>,
-                                            std::shared_ptr<IGuiContext>);
+    /**
+     * @brief Генератор функтора для клавиши экспорта документа
+     *
+     * @param controller - контроллер приложения
+     * @param guiContext - графический контекст
+     */
+    static std::function<void()> exportToFile(std::shared_ptr<IController> controller,
+                                            std::shared_ptr<IGuiContext> guiContext);
 
-    static std::function<void()> importFromFile(std::shared_ptr<IController>,
-                                            std::shared_ptr<IGuiContext>);
+    /**
+     * @brief Генератор функтора для клавиши импорта документа
+     *
+     * @param controller - контроллер приложения
+     * @param guiContext - графический контекст
+     */
+    static std::function<void()> importFromFile(std::shared_ptr<IController> controller,
+                                            std::shared_ptr<IGuiContext> guiContext);
 
-    static std::function<void()> createLine(std::shared_ptr<IController>,
-                                            std::shared_ptr<IGuiContext>,
-                                            std::shared_ptr<IShapesFactory>);
+    /**
+     * @brief Генератор функтора для клавиши создания фигуры линии
+     *
+     * @param controller - контроллер приложения
+     * @param guiContext - графический контекст
+     * @param shapesFactory - фабрика фигур
+     */
+    static std::function<void()> createLine(std::shared_ptr<IController> controller,
+                                            std::shared_ptr<IGuiContext> guiContext,
+                                            std::shared_ptr<IShapesFactory> shapesFactory);
 
-    static std::function<void()> createCircle(std::shared_ptr<IController>,
-                                              std::shared_ptr<IGuiContext>,
-                                              std::shared_ptr<IShapesFactory>);
+    /**
+     * @brief Генератор функтора для клавиши создания фигуры окружности
+     *
+     * @param controller - контроллер приложения
+     * @param guiContext - графический контекст
+     * @param shapesFactory - фабрика фигур
+     */
+    static std::function<void()> createCircle(std::shared_ptr<IController> controller,
+                                              std::shared_ptr<IGuiContext> guiContext,
+                                              std::shared_ptr<IShapesFactory> shapesFactory);
 
-    static std::function<void()> removeShape(std::shared_ptr<IController>,
-                                            std::shared_ptr<IGuiContext>);
+    /**
+     * @brief Генератор функтора для клавиши удаления выделенной фигуры
+     *
+     * @param controller - контроллер приложения
+     * @param guiContext - графический контекст
+     */
+    static std::function<void()> removeShape(std::shared_ptr<IController> controller,
+                                            std::shared_ptr<IGuiContext> guiContext);
 };
 
 #endif // BUTTONSCALLBACKFACTORY_H

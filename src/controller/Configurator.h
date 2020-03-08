@@ -3,6 +3,11 @@
 
 #include "interface/IConfiguration.h"
 
+/**
+ * @brief Реализация конфигурации
+ */
+
+
 class Configurator : public IConfiguration
 {
 public:

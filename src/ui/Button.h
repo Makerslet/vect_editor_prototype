@@ -7,10 +7,19 @@
 
 #include <functional>
 
+/**
+ * @brief Реализация кнопки
+ */
+
 class Button : public IButton
 {
 public:
-    Button(const std::function<void()>&);
+    /**
+     * @brief Конструктор кнопки
+     *
+     * @param callback - функтор, выполняющийся при нажатии
+     */
+    Button(const std::function<void()>& callback);
     void press() override;
 
 private:

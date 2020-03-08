@@ -7,6 +7,10 @@
 
 #include <vector>
 
+/**
+ * @brief Реализация обработчика комманд
+ */
+
 class CommandHandler : public ICommandHandler
 {
 public:

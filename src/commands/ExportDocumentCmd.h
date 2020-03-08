@@ -6,12 +6,24 @@
 #include "interface/IController.h"
 #include "interface/IDocument.h"
 
+/**
+ * @brief Команда экспорта документа.
+ * Команда позволяет экспортировать документ в файл
+ */
+
 class ExportDocumentCmd : public ICommand
 {
 public:
-    ExportDocumentCmd(std::shared_ptr<IController>,
-                      std::shared_ptr<IDocument>,
-                      const std::string&);
+    /**
+     * @brief Конструктор команды
+     *
+     * @param controller - контроллер приложения
+     * @param document - экспортируемый документ
+     * @param name - имя файла для экспортируемого документа
+     */
+    ExportDocumentCmd(std::shared_ptr<IController> controller,
+                      std::shared_ptr<IDocument> document,
+                      const std::string& name);
 
     void execute() override;
 

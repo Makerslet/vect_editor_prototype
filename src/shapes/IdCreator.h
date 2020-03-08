@@ -3,6 +3,10 @@
 
 #include "interface/IIdCreator.h"
 
+/**
+ * @brief Реализация генератора идентификаторов
+ */
+
 class IdCreator : public IIdCreator
 {
 public:
